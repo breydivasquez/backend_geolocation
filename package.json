@@ -1,0 +1,22 @@
+{
+  "name": "outdoorsy",
+  "version": "1.0.0",
+  "description": "rest api geolocalizacion",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "breydi.vasquez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

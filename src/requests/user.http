@@ -1,0 +1,32 @@
+@api = http://172.21.165.7:5000/api/v1/user
+
+### Get users
+GET {{api}}
+
+### Get ser
+GET {{api}}/2
+
+
+### Create user
+POST {{api}}
+Content-Type: application/json
+
+{
+    "username": "admin24",
+    "password": "admin",
+    "mail": "admin@gmail.com",
+    "description": "admin sistem"
+}
+
+### Update user
+PUT {{api}}/16
+Content-Type: application/json
+
+{
+ "description": "only admin"
+}
+
+
+
+### Delete user
+DELETE {{api}}/22
