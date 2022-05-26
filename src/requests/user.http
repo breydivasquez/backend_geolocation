@@ -1,4 +1,4 @@
-@api = http://172.21.165.7:5000/api/v1/user
+@api = http://172.21.174.173:5000/api/v1/user
 
 ### Get users
 GET {{api}}
@@ -12,7 +12,7 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "username": "admin24",
+    "username": 123,
     "password": "admin",
     "mail": "admin@gmail.com",
     "description": "admin sistem"

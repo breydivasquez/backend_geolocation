@@ -14,7 +14,7 @@ const {
 
 exports.getUsers = async (req, res, next) => {
   try {
-    const users = await getAll(next);
+    const users = await getAll();
 
     res.status(200).json(users);
   } catch (error) {

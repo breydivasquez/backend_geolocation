@@ -15,7 +15,7 @@ exports.getAll = async () => {
     const { rows } = await pool.query(querySelect);
     return rows;
   } catch (e) {
-    return e.stack;
+    throw e;
   }
 };
 
@@ -34,7 +34,7 @@ exports.getById = async (id) => {
     const { rows } = await pool.query(querySelectById);
     return rows;
   } catch (e) {
-    return e.stack;
+    throw e;
   }
 };
 
@@ -53,7 +53,7 @@ exports.insert = async (data) => {
     const { rows } = await pool.query(queryInsert);
     return rows;
   } catch (e) {
-    return e.stack;
+    throw e;
   }
 };
 
@@ -72,7 +72,7 @@ exports.update = async (id, data) => {
     const { rows } = await pool.query(queryUpdate);
     return rows;
   } catch (e) {
-    return e.stack;
+    throw e;
   }
 };
 
@@ -91,6 +91,6 @@ exports.remove = async (id) => {
     const { rows } = await pool.query(queryDelete);
     return rows;
   } catch (e) {
-    return e.stack;
+    throw e;
   }
 };

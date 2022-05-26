@@ -1,0 +1,16 @@
+@api = http://172.21.165.214:5000/api/v1/directions/route
+
+### Get users
+GET  {{api}}
+Content-Type: application/json
+
+{
+  "profile": "car",
+  "origin": "40.409246,-3.677144",
+  "destination": "40.428924,-3.651969",
+  "wps": "",
+  "alternatives": false,
+  "steps": true,
+  "geometries": "polyline",
+  "overview": "simplified"
+}

@@ -3,6 +3,7 @@ const cors = require("cors");
 const corsOptions = require("./utils/corsOptions");
 const config = require("./config");
 const router = require("./routes/index");
+const { logError, errorAjvHandler, errorHandler } = require("./middlewares/error.handler");
 const app = express();
 
 // Settings
@@ -19,5 +20,8 @@ app.use(cors(corsOptions));
 app.use(config.api.main, router);
 
 // Middlewares validations
+app.use(logError);
+app.use(errorAjvHandler);
+app.use(errorHandler);
 
 module.exports = app;
