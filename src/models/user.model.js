@@ -45,8 +45,8 @@ exports.insert = async (data) => {
 
   const queryInsert = {
     name: "insert-user",
-    text: `INSERT INTO ${tuser} (username, password, mail, description) VALUES($1, $2, $3, $4) RETURNING *`,
-    values: [data.username, data.password, data.mail, data.description],
+    text: `INSERT INTO ${tuser} (username, password, email, description) VALUES($1, $2, $3, $4) RETURNING *`,
+    values: [data.username, data.password, data.email, data.description],
     rowMode: "object",
   };
   try {
@@ -63,8 +63,8 @@ exports.update = async (id, data) => {
    */
   const queryUpdate = {
     name: "update-user",
-    text: `UPDATE ${tuser} SET username = $1, mail = $2 , description = $3 WHERE id_user = $4 RETURNING *`,
-    values: [data.username, data.mail, data.description, id],
+    text: `UPDATE ${tuser} SET username = $1, email = $2 , description = $3 WHERE id_user = $4 RETURNING *`,
+    values: [data.username, data.email, data.description, id],
     rowMode: "object",
   };
 

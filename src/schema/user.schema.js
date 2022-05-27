@@ -5,10 +5,10 @@ const insertUserSchema = {
   properties: {
     username: { type: "string" },
     password: { type: "string", format: "password" },
-    mail: { type: "string", format: "email" },
+    email: { type: "string", format: "email" },
     description: { type: "string" },
   },
-  required: ["username", "password", "mail"],
+  required: ["username", "password", "email"],
   additionalProperties: false,
 };
 

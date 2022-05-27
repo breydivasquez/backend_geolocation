@@ -4,7 +4,7 @@ CREATE TABLE outdoorsy.tuser (
   id_user SERIAL PRIMARY KEY,
   username VARCHAR(100) UNIQUE,
   password VARCHAR(255),
-  mail    VARCHAR(150),
+  email    VARCHAR(150),
   description TEXT,
   date_reg TIMESTAMP NULL DEFAULT now(),
   date_mod TIMESTAMP NULL

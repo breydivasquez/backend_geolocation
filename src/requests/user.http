@@ -14,7 +14,7 @@ Content-Type: application/json
 {
     "username": 123,
     "password": "admin",
-    "mail": "admin@gmail.com",
+    "email": "admin@gmail.com",
     "description": "admin sistem"
 }
 
