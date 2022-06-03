@@ -8,7 +8,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://172.21.172.149:5000/api/v1"
+        url: "http://172.22.72.151:5000/api/v1"
       }
     ]
   },

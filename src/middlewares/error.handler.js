@@ -19,7 +19,7 @@ function errorAjvHandler(err, req, res, next) {
     res.status(err.status).json({
       success: false,
       data: null,
-      error: err.errors,
+      error: err.errors?? err.stack,
       statusCode: err.status,
     });
   } else {

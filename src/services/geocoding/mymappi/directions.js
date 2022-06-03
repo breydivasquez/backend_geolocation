@@ -1,9 +1,9 @@
 const axios = require("axios");
-const config = require("../../config");
-const { encodeUri } = require("../../utils/encodeURI");
+const config = require("../../../config");
+const { encodeUri } = require("../../../utils/encodeURI");
 
-const BASE_URL = config.geocoding.api;
-const API_KEY = config.geocoding.key;
+const BASE_URL = config.geocoding.apiMymappi;
+const API_KEY = config.geocoding.keyMymappi;
 const API = "/v2/directions/route/";
 
 /**

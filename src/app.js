@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
 const corsOptions = require("./utils/corsOptions");
 const config = require("./config");
 const router = require("./routes/index");
@@ -23,6 +24,9 @@ app.use(express.json());
 
 // Swagger options
 const specs = swaggerJsDoc(options);
+
+// Middleware helmet security routes
+app.use(helmet());
 
 // Cors
 app.use(cors(corsOptions));

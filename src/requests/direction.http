@@ -1,6 +1,6 @@
-@api = http://172.21.165.214:5000/api/v1/directions/route
+@api = http://172.22.72.151:5000/api/v1/directions/route
 
-### Get users
+### Get directions
 GET  {{api}}
 Content-Type: application/json
 
@@ -13,4 +13,27 @@ Content-Type: application/json
   "steps": true,
   "geometries": "polyline",
   "overview": "simplified"
+}
+
+### Get directions google maps
+GET  {{api}}
+Content-Type: application/json
+
+{
+    "origin": "Disneyland",
+    "destination": "Universal Studios Hollywood",
+    "mode": "",
+    "waypoints": "",    
+    "avoid": "",
+    "departure_time": "",
+    "region": "",
+    "alternatives": false,
+    "arrival_time": "",
+    "language": "",
+    "optimize": false,
+    "units": "",
+    "region": "",
+    "transit_routing_preference": "",
+    "traffic_model": "",
+    "transit_mode": ""
 }
