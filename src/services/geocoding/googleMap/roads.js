@@ -8,12 +8,12 @@ const API_KEY = config.geocoding.keyGoogle;
 
 const client = new Client();
 
-const directions = async (paramsRequest) => {
+const roads = async (paramsRequest) => {
   //addition api key to request
   paramsRequest.key = API_KEY;
-  
+
   return await client
-    .directions(
+    .distancematrix(
       {
         params: paramsRequest,
         timeout: 1000, // milliseconds
@@ -24,4 +24,4 @@ const directions = async (paramsRequest) => {
     .catch((e) => e.response.data);
 };
 
-module.exports = directions;
+module.exports = roads;

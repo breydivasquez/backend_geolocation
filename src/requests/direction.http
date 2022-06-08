@@ -1,39 +1,24 @@
-@api = http://172.22.72.151:5000/api/v1/directions/route
-
-### Get directions
-GET  {{api}}
-Content-Type: application/json
-
-{
-  "profile": "car",
-  "origin": "40.409246,-3.677144",
-  "destination": "40.428924,-3.651969",
-  "wps": "",
-  "alternatives": false,
-  "steps": true,
-  "geometries": "polyline",
-  "overview": "simplified"
-}
+@api = http://172.22.73.72:5000/api/v1/map/directions
 
 ### Get directions google maps
 GET  {{api}}
 Content-Type: application/json
 
 {
-    "origin": "Disneyland",
-    "destination": "Universal Studios Hollywood",
-    "mode": "",
-    "waypoints": "",    
-    "avoid": "",
-    "departure_time": "",
-    "region": "",
-    "alternatives": false,
-    "arrival_time": "",
-    "language": "",
-    "optimize": false,
-    "units": "",
-    "region": "",
-    "transit_routing_preference": "",
-    "traffic_model": "",
-    "transit_mode": ""
+  "origin": "Disneyland",
+  "destination": "Universal Studios Hollywood",
+  "mode": "",
+  "waypoints": "",    
+  "avoid": "",
+  "departure_time": "",
+  "region": "",
+  "alternatives": false,
+  "arrival_time": "",
+  "language": "",
+  "optimize": false,
+  "units": "",
+  "region": "",
+  "transit_routing_preference": "",
+  "traffic_model": "",
+  "transit_mode": ""
 }

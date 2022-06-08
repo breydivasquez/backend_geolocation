@@ -146,5 +146,6 @@ dist
 
 #src path proyect
 src/constants/
+src/requests/
 
 # End of https://www.toptal.com/developers/gitignore/api/node

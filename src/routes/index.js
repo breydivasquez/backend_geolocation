@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const routesUser = require("./user.routes");
-const routesDirections = require("./directions.routes");
+const routesGooleMap = require("./gooleMap.routes");
 
 router.get("/", (req, res) => res.send("Welcome to api rest outdoorsy"));
 router.use("/user", routesUser);
-router.use("/directions", routesDirections);
+router.use("/map", routesGooleMap);
 router.use("*", (req, res) =>
   res.status(404).json({
     success: false,
