@@ -3,7 +3,7 @@ const directions = require("../services/geocoding/googleMap/directions");
 const distanceMatrix = require("../services/geocoding/googleMap/distanceMatrix");
 const elevation = require("../services/geocoding/googleMap/elevation");
 const geocoding = require("../services/geocoding/googleMap/geocoding");
-const places = require("../services/geocoding/googleMap/places");
+const { placeDetails, placesNearby } = require("../services/geocoding/googleMap/places");
 const roads = require("../services/geocoding/googleMap/roads");
 
 /**
@@ -12,9 +12,9 @@ const roads = require("../services/geocoding/googleMap/roads");
  * @access Private
  */
 
-exports.directions = (req, res, next) => {
+exports.directions = async (req, res, next) => {
   try {
-    const response = directions(req.body);
+    const response = await directions(req.body);
     res.status(200).json(response);
   } catch (error) {
     next(error);
@@ -27,9 +27,9 @@ exports.directions = (req, res, next) => {
  * @access Private
  */
 
-exports.distanceMatrix = (req, res, next) => {
+exports.distanceMatrix = async (req, res, next) => {
   try {
-    const response = distanceMatrix(req.body);
+    const response = await distanceMatrix(req.body);
     res.status(200).json(response);
   } catch (error) {
     next(error);
@@ -42,9 +42,9 @@ exports.distanceMatrix = (req, res, next) => {
  * @access Private
  */
 
-exports.elevation = (req, res, next) => {
+exports.elevation = async (req, res, next) => {
   try {
-    const response = elevation(req.body);
+    const response = await elevation(req.body);
     res.status(200).json(response);
   } catch (error) {
     next(error);
@@ -57,9 +57,9 @@ exports.elevation = (req, res, next) => {
  * @access Private
  */
 
-exports.geocoding = (req, res, next) => {
+exports.geocoding = async (req, res, next) => {
   try {
-    const response = geocoding(req.body);
+    const response = await geocoding(req.body);
     res.status(200).json(response);
   } catch (error) {
     next(error);
@@ -67,14 +67,29 @@ exports.geocoding = (req, res, next) => {
 };
 
 /**
- * @desc Get Places api
- * @route GET /api/v1/map/places
+ * @desc Get Place Details api
+ * @route GET /api/v1/map/placeDetails
  * @access Private
  */
 
-exports.places = (req, res, next) => {
+exports.placeDetails = async (req, res, next) => {
   try {
-    const response = places(req.body);
+    const response = await placeDetails(req.body);
+    res.status(200).json(response);
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * @desc Get Places Nearby api
+ * @route GET /api/v1/map/placesNearby
+ * @access Private
+ */
+
+exports.placesNearby = async (req, res, next) => {
+  try {
+    const response = await placesNearby(req.body);
     res.status(200).json(response);
   } catch (error) {
     next(error);
@@ -87,9 +102,9 @@ exports.places = (req, res, next) => {
  * @access Private
  */
 
-exports.roads = (req, res, next) => {
+exports.roads = async (req, res, next) => {
   try {
-    const response = roads(req.body);
+    const response = await roads(req.body);
     res.status(200).json(response);
   } catch (error) {
     next(error);

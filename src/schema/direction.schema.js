@@ -6,7 +6,10 @@ const directionSchema = {
     origin: { type: "string" },
     destination: { type: "string" },
     mode: { type: "string" },
-    waypoints: { type: "string" },    
+    waypoints: {
+      type: "array",
+      items: { type: "string" },
+    },
     avoid: { type: "string" },
     departure_time: {
       anyOf: [{ type: "number" }, { type: "string" }],

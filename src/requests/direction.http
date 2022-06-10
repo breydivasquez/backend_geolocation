@@ -1,14 +1,14 @@
-@api = http://172.22.73.72:5000/api/v1/map/directions
+@api = http://172.22.64.199:5000/api/v1/map/directions
 
 ### Get directions google maps
-GET  {{api}}
+GET {{api}}
 Content-Type: application/json
 
 {
   "origin": "Disneyland",
   "destination": "Universal Studios Hollywood",
   "mode": "",
-  "waypoints": "",    
+  "waypoints": [""],    
   "avoid": "",
   "departure_time": "",
   "region": "",
