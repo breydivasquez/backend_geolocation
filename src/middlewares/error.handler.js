@@ -5,12 +5,12 @@ function logError(err, rew, res, next) {
 }
 
 function errorHandler(err, req, res, next) {
-  const message = [{ message: typeError(err.code), description: err.stack }];
+  
+  const message = [{ type: typeError(err.code ?? 0), description: err.stack }];
   res.status(500).json({
     success: false,
     data: null,
-    error: message ?? err.stack,
-    statusCode: 500,
+    message: message ?? err.stack
   });
 }
 
@@ -19,8 +19,7 @@ function errorAjvHandler(err, req, res, next) {
     res.status(err.status).json({
       success: false,
       data: null,
-      error: err.errors?? err.stack,
-      statusCode: err.status,
+      message: err.errors ?? err.stack
     });
   } else {
     next(err);

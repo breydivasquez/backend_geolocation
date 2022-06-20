@@ -6,6 +6,8 @@ const {
   remove,
 } = require("../models/user.model");
 
+const resBuild = require("../utils/response");
+
 /**
  * @desc Get all users
  * @route GET /api/v1/users
@@ -15,8 +17,8 @@ const {
 exports.getUsers = async (req, res, next) => {
   try {
     const users = await getAll();
-
-    res.status(200).json(users);
+    const response = resBuild(users);
+    res.status(200).json(response);
   } catch (error) {
     next(error);
   }
@@ -34,10 +36,14 @@ exports.getUser = async (req, res, next) => {
 
     const user = await getById(id);
 
-    if (user.length === 0)
-      return res.status(404).json({ message: "User not found" });
+    if (user.length === 0) {
+      const response = resBuild(null, 404, "User");
+      return res.status(404).json(response);
+    }
+      
+    const response = resBuild(user);
 
-    res.status(200).json(user);
+    res.status(200).json(response);
   } catch (error) {
     next(error);
   }
@@ -52,8 +58,8 @@ exports.getUser = async (req, res, next) => {
 exports.createUser = async (req, res, next) => {
   try {
     const newUser = await insert(req.body);
-
-    res.status(201).json(newUser);
+    const response = resBuild(newUser);
+    res.status(201).json(response);
   } catch (error) {
     next(error);
   }
@@ -71,10 +77,13 @@ exports.updateUser = async (req, res, next) => {
 
     const updateUser = await update(id, req.body);
 
-    if (updateUser.length === 0)
-      return res.status(404).json({ message: "User not found" });
-
-    return res.status(200).json(updateUser);
+    if (updateUser.length === 0) {
+      const response = resBuild(updateUser, 404, "User");
+      return res.status(404).json(response);
+    }
+      
+    const response = resBuild(updateUser);
+    return res.status(200).json(response);
   } catch (error) {
     next(error);
   }
@@ -92,10 +101,13 @@ exports.deleteUser = async (req, res, next) => {
 
     const deleteUser = await remove(id);
 
-    if (deleteUser.length === 0)
-      return res.status(404).json({ message: "User not found" });
-
-    return res.status(200).json(deleteUser);
+    if (deleteUser.length === 0) {
+      const response = resBuild(deleteUser, 404, "User");
+      return res.status(404).json(response);
+    }
+      
+    const response = resBuild(deleteUser);
+    return res.status(200).json(response);
   } catch (error) {
     next(error);
   }

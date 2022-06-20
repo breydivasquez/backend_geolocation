@@ -1,10 +1,10 @@
-@api = http://172.21.174.173:5000/api/v1/user
+@api = http://172.31.98.52:5000/api/v1/user
 
 ### Get users
 GET {{api}}
 
 ### Get ser
-GET {{api}}/2
+GET {{api}}/232
 
 
 ### Create user
@@ -12,14 +12,14 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "username": 123,
+    "username": 1212,
     "password": "admin",
     "email": "admin@gmail.com",
     "description": "admin sistem"
 }
 
 ### Update user
-PUT {{api}}/16
+PUT {{api}}/23
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 
 
 ### Delete user
-DELETE {{api}}/22
+DELETE {{api}}/40
